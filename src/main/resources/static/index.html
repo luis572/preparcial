@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>User</title>
+    
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+        crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--Made with love by Mutiullah Samim -->
+    <!--Bootsrap 4 CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!--Custom styles-->
+   
+    
+</head>
+
+<body >
+    <div class="wrapper">
+        <div class="sidebar" data-image="../imagenes/conductor.png">
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a href="" class="simple-text">
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/perfilDriver.html">
+                            <i class="fas fa-user"></i>
+                            <p>Driver Profile</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/mapaDriver.html">
+                            <i class="fa fa-map-marker"></i>
+                            <p>Maps</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active active-pro">
+                        <a class="nav-link active" href="">
+                            <i class="fas fa-user"></i>
+                            <p>Log out</p>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="container-fluid" style="width: 55%; 
+        height: 15%;float: left; border:black;  
+        border-style: solid;
+        position: absolute ; left: 20%;">
+            <form>
+                <br>
+                <center>
+                   
+                    <input type="button" value="Activate Service" class="btn float-none login_btn" onclick="">
+                </center>
+            </form>
+
+        </div>
+        <div class="container-fluid" style="width: 25%; 
+        height: 100%;float: left; 
+        border:black;  border-style: solid;
+        position: absolute;
+        left:75%;">
+            <form>
+                    Application:
+                    <div class="row">
+                        <br>
+                        <div class="col-md-2">
+                            <input type="checkbox" class="check" name="Tcuenta" value="1" id="beat"> Beat
+                            <!--<img src="/imagenes/Beat.png" alt="..." class="imgRedonda-off" id="beat-imagen"  onclick="checkCuentas(1)">-->
+                        </div>
+                        <div class="col-md-2">
+                            <input type="checkbox" class="check" name="Tcuenta" value="2" id="uber"> Uber
+                            <!--<img src="/imagenes/uber.png" alt="..."  class="imgRedonda-off" id="uber-imagen" onclick="checkCuentas(2)" >-->
+                        </div>
+                        <div class="col-md-2">
+                            <input type="checkbox" class="check" name="Tcuenta" value="3" id="didi"> Didi
+                            <!--<img src="/imagenes/Didi.png" alt="..." class="imgRedonda-off" id="didi-imagen" onclick="checkCuentas(3)">-->
+                        </div>
+
+                    </div>
+                <br>
+                <center>
+                    Notificacion de Carreras: 
+                </center>
+
+            </form>
+        </div>
+        <div class="container-fluid" style="width: 75%; height: 60%;float: left; border:black; 
+         border-style: solid; position: absolute; top:15%;">
+            <div class="main-panel">
+                <div id="map" style="width: 100%; height: 100%;"></div>
+            </div>
+        </div>
+        <div class="container-fluid" style="width: 54%; height: 25%;float: left; border:black; 
+         border-style: solid; position: absolute;
+        left:21%; top: 75%;">
+            <form>
+              
+                   Service:
+                    <div class="row">
+                       
+                        <br>
+                        <div class="col-md-12">
+                            <input type="checkbox" class="check" name="Tcuenta" value="1" id="beat"> More Expensive Careers
+                            <!--<img src="/imagenes/Beat.png" alt="..." class="imgRedonda-off" id="beat-imagen"  onclick="checkCuentas(1)">-->
+                        </div>
+                  
+                        
+
+                    </div>
+                    Destination
+                    <br>
+                    <div class="row">
+                       
+                           
+                            <div class="col-md-12">
+                                <input type="checkbox" class="check" name="Tcuenta" value="2" id="uber"> Nearby Destination:
+                                <!--<img src="/imagenes/uber.png" alt="..."  class="imgRedonda-off" id="uber-imagen" onclick="checkCuentas(2)" >-->
+                            </div>
+                            <div class="col-md-12">
+                                    Destination: <input type="text" > 
+                                    <!--<img src="/imagenes/uber.png" alt="..."  class="imgRedonda-off" id="uber-imagen" onclick="checkCuentas(2)" >-->
+                                </div>
+    
+                        </div>
+                
+            </form>
+        </div>
+    </div>
+        
+    </div>
+    <script>
+        var map = L.map('map').setView([4.701979, -74.129346], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+    </script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXtqmOjaBay51oVsnslfDd2Nxc92JV5qo&callback=iniciarMap"></script>-->
+</body>
+<!--   Core JS Files   -->
+
+
+
+</html>
