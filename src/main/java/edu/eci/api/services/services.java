@@ -8,6 +8,8 @@ package edu.eci.api.services;
 import edu.eci.api.persistence.repositories.IAirportRepository;
 import edu.eci.api.services.contracts.IAppServices;
 import java.io.IOException;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,8 +29,10 @@ public class services implements IAppServices {
             return aiportRepository.getInfo(city);
         } catch (IOException e) {
             e.printStackTrace();
-            return "Error al buscar la ciudad " + city;
+            return null;
         }
     }
+
+ 
 
 }

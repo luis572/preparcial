@@ -8,7 +8,13 @@ package edu.eci.api.persistence;
 import edu.eci.api.HttpConnection.HttpConnectionExample;
 import edu.eci.api.persistence.repositories.IAirportRepository;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -25,9 +31,16 @@ public class inMemoryAirports implements IAirportRepository {
     HttpConnectionExample connectionExample;
 
     @Override
-    public String getInfo(String city) throws IOException {
-        String newInfo = connectionExample.getJson(city);
-        return newInfo;//To change body of generated methods, choose Tools | Templates.
+    public String getInfo(String city) throws IOException, MalformedURLException {
+        String newInfo;
+        try {
+            newInfo = connectionExample.getJson(city);
+            return newInfo;
+        } catch (JSONException ex) {
+            Logger.getLogger(inMemoryAirports.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //To change body of generated methods, choose Tools | Templates.
+        return null;
     }
 
 }

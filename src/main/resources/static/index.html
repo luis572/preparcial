@@ -21,41 +21,14 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!--Custom styles-->
-   
-    
+    <link href="css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
+    <script src="js/apiclient.js"></script>
+    <script src="js/app.js"></script>
 </head>
 
 <body >
     <div class="wrapper">
-        <div class="sidebar" data-image="../imagenes/conductor.png">
-            <div class="sidebar-wrapper">
-                <div class="logo">
-                    <a href="" class="simple-text">
-                    </a>
-                </div>
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/perfilDriver.html">
-                            <i class="fas fa-user"></i>
-                            <p>Driver Profile</p>
-                        </a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/mapaDriver.html">
-                            <i class="fa fa-map-marker"></i>
-                            <p>Maps</p>
-                        </a>
-                    </li>
-                    <li class="nav-item active active-pro">
-                        <a class="nav-link active" href="">
-                            <i class="fas fa-user"></i>
-                            <p>Log out</p>
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
+        
         <div class="container-fluid" style="width: 55%; 
         height: 15%;float: left; border:black;  
         border-style: solid;
@@ -63,8 +36,8 @@
             <form>
                 <br>
                 <center>
-                   
-                    <input type="button" value="Activate Service" class="btn float-none login_btn" onclick="">
+                    Destination: <input id="city" type="text">
+                    <input type="button" value="Search Service" class="btn float-none login_btn" onclick="app.getAirports()">
                 </center>
             </form>
 
@@ -74,30 +47,7 @@
         border:black;  border-style: solid;
         position: absolute;
         left:75%;">
-            <form>
-                    Application:
-                    <div class="row">
-                        <br>
-                        <div class="col-md-2">
-                            <input type="checkbox" class="check" name="Tcuenta" value="1" id="beat"> Beat
-                            <!--<img src="/imagenes/Beat.png" alt="..." class="imgRedonda-off" id="beat-imagen"  onclick="checkCuentas(1)">-->
-                        </div>
-                        <div class="col-md-2">
-                            <input type="checkbox" class="check" name="Tcuenta" value="2" id="uber"> Uber
-                            <!--<img src="/imagenes/uber.png" alt="..."  class="imgRedonda-off" id="uber-imagen" onclick="checkCuentas(2)" >-->
-                        </div>
-                        <div class="col-md-2">
-                            <input type="checkbox" class="check" name="Tcuenta" value="3" id="didi"> Didi
-                            <!--<img src="/imagenes/Didi.png" alt="..." class="imgRedonda-off" id="didi-imagen" onclick="checkCuentas(3)">-->
-                        </div>
-
-                    </div>
-                <br>
-                <center>
-                    Notificacion de Carreras: 
-                </center>
-
-            </form>
+            
         </div>
         <div class="container-fluid" style="width: 75%; height: 60%;float: left; border:black; 
          border-style: solid; position: absolute; top:15%;">
@@ -105,43 +55,11 @@
                 <div id="map" style="width: 100%; height: 100%;"></div>
             </div>
         </div>
-        <div class="container-fluid" style="width: 54%; height: 25%;float: left; border:black; 
+        <div class="container-fluid" style="width: 55%; height: 25%;float: left; border:black; 
          border-style: solid; position: absolute;
-        left:21%; top: 75%;">
-            <form>
-              
-                   Service:
-                    <div class="row">
-                       
-                        <br>
-                        <div class="col-md-12">
-                            <input type="checkbox" class="check" name="Tcuenta" value="1" id="beat"> More Expensive Careers
-                            <!--<img src="/imagenes/Beat.png" alt="..." class="imgRedonda-off" id="beat-imagen"  onclick="checkCuentas(1)">-->
-                        </div>
-                  
-                        
-
-                    </div>
-                    Destination
-                    <br>
-                    <div class="row">
-                       
-                           
-                            <div class="col-md-12">
-                                <input type="checkbox" class="check" name="Tcuenta" value="2" id="uber"> Nearby Destination:
-                                <!--<img src="/imagenes/uber.png" alt="..."  class="imgRedonda-off" id="uber-imagen" onclick="checkCuentas(2)" >-->
-                            </div>
-                            <div class="col-md-12">
-                                    Destination: <input type="text" > 
-                                    <!--<img src="/imagenes/uber.png" alt="..."  class="imgRedonda-off" id="uber-imagen" onclick="checkCuentas(2)" >-->
-                                </div>
-    
-                        </div>
-                
-            </form>
+        left:20%; top: 75%;">
+            Estado De Solicitud del servicio: 
         </div>
-    </div>
-        
     </div>
     <script>
         var map = L.map('map').setView([4.701979, -74.129346], 13);

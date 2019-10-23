@@ -11,6 +11,7 @@ package edu.eci.api.HttpConnection;
  */
 
 
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -18,12 +19,15 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.stereotype.Component;
 @Component
 public class HttpConnectionExample {
 
     
-    public static String getJson(String url) throws MalformedURLException, IOException {
+    public static String   getJson(String url) throws MalformedURLException, IOException, JSONException {
             
         String USER_AGENT = "Mozilla/5.0";        
         URL obj = new URL("https://cometari-airportsfinder-v1.p.rapidapi.com/api/airports/by-text?text=Berlin");
@@ -49,11 +53,12 @@ public class HttpConnectionExample {
 
             // print result
             System.out.println(response.toString());
+             return response.toString();
         } else {
             System.out.println("GET request not worked");
         }
         System.out.println("GET DONE");
-        return "";
+        return null;
     }
 
 }
